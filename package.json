@@ -1,0 +1,14 @@
+{
+  "name": "learn-svelte",
+  "version": "1.0.0",
+  "description": "My repo for learning Svelte, and maybe Tailwind CSS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "email": "stevan@madhouseminers.com",
+    "name": "Stevan Goode"
+  },
+  "license": "MIT"
+}
