@@ -4,11 +4,26 @@
   "description": "My repo for learning Svelte, and maybe Tailwind CSS",
   "main": "index.js",
   "scripts": {
+    "dev": "parcel dev src/index.html",
+    "build": "parcel build src/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": {
     "email": "stevan@madhouseminers.com",
     "name": "Stevan Goode"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.10.4",
+    "@babel/plugin-transform-runtime": "^7.10.4",
+    "prettier": "^2.0.5"
+  },
+  "dependencies": {
+    "apollo-boost": "^0.4.9",
+    "graphql-tag": "^2.10.4",
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-svelte": "^4.0.6",
+    "svelte": "^3.24.0",
+    "svelte-apollo": "^0.3.0"
+  }
 }

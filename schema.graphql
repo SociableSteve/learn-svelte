@@ -1,0 +1,121 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+    query: Query
+    mutation: Mutation
+    subscription: Subscription
+}
+
+type ChatMessage {
+    id: ID
+    message: String
+    sender: String
+    sent: String
+    server: String
+}
+
+type DiscordUser {
+    avatar_url: String
+    avatar_url_jpg: String
+    id: ID
+    name: String
+    playing: String
+    status: DiscordStatus
+}
+
+type LoginPayload {
+    token: String
+    user: User
+}
+
+type Mutation {
+    authenticate(email: String!, password: String!): LoginPayload
+    register(aboutUser: String!, confPassword: String!, dob: String!, email: String!, interestedServers: String!, knownMembers: String!, minecraftName: String!, moddedExperience: String!, password: String!, whereHeard: String!): Boolean
+    resetPassword(email: String!): Boolean
+    reviewWhitelist(feedback: String!, id: ID, outcome: String!): Whitelist
+    updatePassword(confirmPassword: String!, password: String!, token: String!): LoginPayload
+    updateWhitelist(aboutUser: String!, id: ID, interestedServers: String!, knownMembers: String!, moddedExperience: String!, whereHeard: String!): Whitelist
+    verifyAccount(token: String!): LoginPayload
+}
+
+type Query {
+    chat(limit: Int = 10): [ChatMessage]
+    discordUsers: [DiscordUser]
+    profile: User
+    servers(category: String): [Server]
+    validateResetToken(token: String!): String
+    whitelist(id: ID): Whitelist
+    whitelists: [Whitelist]
+}
+
+type Server {
+    category: ServerCategory
+    id: ID
+    name: String
+    playercount: Int
+    status: Status
+    version: String
+}
+
+type Subscription {
+    discordUsersUpdate: [DiscordUser]
+    serverUpdated(server: ID): Server
+    whitelistUpdated: Whitelist
+}
+
+type User {
+    displayName: String
+    email: String
+    id: String
+    reviewer: Boolean
+    whitelist: WhitelistStatus
+}
+
+type Whitelist {
+    aboutUser: String!
+    displayName: String!
+    dob: String!
+    id: ID
+    interestedServers: String!
+    knownMembers: String!
+    minecraftuuid: String
+    moddedExperience: String!
+    status: String!
+    submitted: String
+    whereHeard: String!
+}
+
+type WhitelistStatus {
+    feedback: String
+    status: String
+}
+
+enum CacheControlScope {
+    PRIVATE
+    PUBLIC
+}
+
+enum DiscordStatus {
+    AWAY
+    DND
+    IDLE
+    OFFLINE
+    ONLINE
+}
+
+enum ServerCategory {
+    MODDED
+    VANILLA
+}
+
+enum Status {
+    OFFLINE
+    ONLINE
+    STARTING
+    STOPPING
+    UNKNOWN
+}
+
+
+"The `Upload` scalar type represents a file upload."
+scalar Upload
