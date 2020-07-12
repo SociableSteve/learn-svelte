@@ -1,6 +1,4 @@
 <script>
-    import Something from "../components/Something.svelte";
-
     let email;
     let password;
 
@@ -31,15 +29,6 @@
         dispatch('login', data.data.authenticate.token);
     }
 </script>
-
-<style>
-    p { color: red; font-size: 2em; }
-</style>
-
-<p>
-    this is a P
-</p>
-<Something />
 
 <form method="post" on:submit|preventDefault={handleForm}>
     <label for="email">E-mail Address</label>
