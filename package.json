@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "apollo-boost": "^0.4.9",
-    "graphql-tag": "^2.10.4",
+    "graphql-tag": "^2.11.0",
     "parcel-bundler": "^1.12.4",
     "parcel-plugin-svelte": "^4.0.6",
     "svelte": "^3.24.0",
